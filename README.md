@@ -1,4 +1,4 @@
-# Weather-Dashboard
+# Weather-Forecast
 # Project Description
 This poject outlines the 5 daily forecast for the weather using the Open Weather API for cities.
 
