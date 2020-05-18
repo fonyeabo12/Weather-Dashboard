@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header class="info"/>
+        <div class="col-md-12" id="board">Forecast Dashboard</div>
+    </body>
+    <aside class="info"/>
+        <div class="col-md-2 form-group" id="asidesearch">
+            <h2>Search:</h2>
+            <div id="input" "form-control my-0 py-1" type="text" placeholder="City Name" aria-label="Search">
+            <div class="inputPrepend"><span class="inputText" id="text"><i class="fas fa-search"
+            aria-hidden="true"></i></span>
+            </div>
+            </div>
+        </div>
+            <div id="city">
+                <ul></ul>
+            </div>  
+        </div>
+    </aside>
+
+    <main class="container col-md-10">
+       
+        <div class="info">    
+            <div class="col-md-12">
+                <div class="card">
+                    <div id="daily" class="day">
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="five">
+        </div>
+
+        <section class="info">
+            <div class="col-md-12" id="daily">
+                <div class="card col s12 m">
+                    <div id="day1"></div>
+                    <div id="day2"></div>
+                    <div id="day3"></div>
+                    <div id="day4"></div>
+                    <div id="day5"></div>
+                </div>
+            </div>
+        </section> 
+
+    </main>
+ 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+    
+</body>
+</html>
