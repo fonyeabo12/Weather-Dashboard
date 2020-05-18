@@ -19,9 +19,3 @@ This poject outlines the 5 daily forecast for the weather using the Open Weather
 * CSS
 * JavaScript
 * Open Weather API
-
-## Usage
-
-
-
-
