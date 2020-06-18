@@ -28,25 +28,24 @@ function showWeather(city) {
   $("#day4").empty();
   $("#day5").empty();
 
-  let oneDay =`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=45e45c0bb2ef540df33fa21a29aafa8a`; 
 
   $.ajax({
-      url: oneDay,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=45e45c0bb2ef540df33fa21a29aafa8a`, 
       method: "GET",
   }).then(function(response) {
     var icon = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-    let lat = response.coord.lat; 
-    let lon = response.coord.lon; 
+    let { lat, lon } = geoLocation(response); 
   
     $("#daily").append(
       `<div class='col s12 m6'><h2 class='daily'>${response.name} (${startDate})&nbsp<img src='${icon}'></h2><ul class='daily'>Temperature: ${response.main.temp} °F</ul><ul class='daily'>Humidity: ${response.main.humidity}%</ul><ul class='daily'>Wind Speed: ${response.wind.speed} MPH</ul></div>`
       );
  
-  let fiveDay = "https://api.openweathermap.org/data/2.5/onecall?" 
-  + "lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=d2b58fc265a7fcf14e74baa549ab80cc"; 
-
+  
+   //5 daily forecast
+  
   $.ajax({
-    url: fiveDay,
+    url: "https://api.openweathermap.org/data/2.5/onecall?" 
+  + "lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=d2b58fc265a7fcf14e74baa549ab80cc",
     method: "GET",
     }).then(function(response) {
       
@@ -136,3 +135,9 @@ $("#Btns").on("click", ".list-group-item", function(event) {
 }) 
 
 }); 
+
+function geoLocation(response) {
+  let lat = response.coord.lat;
+  let lon = response.coord.lon;
+  return { lat, lon };
+}
